@@ -1,0 +1,38 @@
+body {
+  background-color: ghostwhite;
+}
+
+.page-container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.control-panel {
+  height: 400px;
+  background: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.half-panel {
+  width: 50%;
+  display: inline-block;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+}
+
+.time-input {
+  margin: 0 8px;
+  width: calc(50% - 16px);
+  height: 5em;
+  display: inline-block;
+  background-color: blue;
+}
+
+input  {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Watts App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="./javascripts/application.js"></script>
+    <script src="./javascripts/thermostats.js"></script>
+    <link rel="stylesheet" href="./stylesheets/app.css">
+  </head>
+  <body ng-app="wattsApp">
+    <div class="page-container">
+      <h1>Watts App</h1>
+      <h2>Convert 1100 watt and 700 watt microwave times</h2>
+      <div ng-controller="ThermostatController">
+        <div class="control-panel">
+
+          <div class="half-panel">
+            <h3>700 Watt</h3>
+            <div class="time">
+              <div class="time-input">
+                <input type="integer" name="" value="">
+              </div>
+              <div class="time-input">
+                <input type="integer" name="" value="">
+              </div>
+            </div>
+          </div>
+
+          <div class="half-panel">
+            <h3>1100 Watt</h3>
+            <div class="time">
+              <div class="time-input">
+                <input type="integer" name="" value="">
+              </div>
+              <div class="time-input">
+                <input type="integer" name="" value="">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="button">
+
+          </div>
+        </div>
+        <!-- <div ng-if="sevenHundredTimes">
+          <div ng-repeat="time in sevenHundredTimes">
+            {{ time }}
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>
