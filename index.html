@@ -15,40 +15,39 @@
       <div ng-controller="ThermostatController">
         <div class="control-panel">
 
-          <div class="half-panel">
-            <h3>700 Watt</h3>
-            <div class="time">
-              <div class="time-input">
-                <input type="integer" name="" value="">
-              </div>
-              <div class="time-input">
-                <input type="integer" name="" value="">
-              </div>
+          <!-- Wattage Switch -->
+          <div class="watt-switch">
+
+          </div>
+
+          <!-- Input Field -->
+          <div class="input-field">
+            <div class="half-input">
+              <select ng-model="minutesSelected">
+                <option ng-repeat="minutes in minutesOptions" value="{{ minutes }}">
+                  {{ minutes }}
+                </option>
+              </select>
+            </div>
+            <div class="half-input">
+              <select ng-model="secondsSelected">
+                <option ng-repeat="seconds in secondsOptions" value="{{ seconds }}">
+                  {{ seconds }}
+                </option>
+              </select>
             </div>
           </div>
 
-          <div class="half-panel">
-            <h3>1100 Watt</h3>
-            <div class="time">
-              <div class="time-input">
-                <input type="integer" name="" value="">
-              </div>
-              <div class="time-input">
-                <input type="integer" name="" value="">
-              </div>
-            </div>
+          <!-- Text Between -->
+          <div class="text-between">
+            is
           </div>
 
-
-          <div class="button">
-
+          <!-- Result -->
+          <div class="result-container">
+            {{ convertedTime }}
           </div>
         </div>
-        <!-- <div ng-if="sevenHundredTimes">
-          <div ng-repeat="time in sevenHundredTimes">
-            {{ time }}
-          </div>
-        </div> -->
       </div>
     </div>
   </body>
