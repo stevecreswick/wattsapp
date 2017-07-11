@@ -2,40 +2,61 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Watts App</title>
+    <title>Watts App - Convert Microwave Times</title>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="./javascripts/application.js"></script>
     <script src="./javascripts/thermostats.js"></script>
     <link rel="stylesheet" href="./stylesheets/app.css">
+
+     <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
   </head>
   <body ng-app="wattsApp">
     <div class="page-container">
       <h1>Watts App</h1>
-      <h2>Convert 1100 watt and 700 watt microwave times</h2>
+      <h4>convert microwave times</h4>
       <div ng-controller="ThermostatController">
         <div class="control-panel">
 
           <!-- Wattage Switch -->
           <div class="watt-switch">
-
+            <div class="watt-button" ng-class="{ 'active' : conversionTo === '1100' }" ng-click="toElevenHundred()">
+              700 watt to 1100 watt
+            </div>
+            <div class="watt-button" ng-class="{ 'active' : conversionTo === '700' }" ng-click="toSevenHundred()">
+              1100 watt to 700 watt
+            </div>
           </div>
 
           <!-- Input Field -->
           <div class="input-field">
             <div class="half-input">
-              <select ng-model="minutesSelected">
+              <select ng-model="minutesSelected" ng-init="setValues()">
                 <option ng-repeat="minutes in minutesOptions" value="{{ minutes }}">
                   {{ minutes }}
                 </option>
               </select>
             </div>
             <div class="half-input">
-              <select ng-model="secondsSelected">
+              <select ng-model="secondsSelected" ng-init="setValues()">
                 <option ng-repeat="seconds in secondsOptions" value="{{ seconds }}">
                   {{ seconds }}
                 </option>
               </select>
             </div>
+          </div>
+
+          <div class="input-labels">
+            <div class="half-input minutes-label">
+              min
+            </div>
+            <div class="half-input seconds-label">
+              seconds
+            </div>
+          </div>
+
+          <div class="wattage">
+            at {{ conversionFrom }} watts
           </div>
 
           <!-- Text Between -->
@@ -45,7 +66,12 @@
 
           <!-- Result -->
           <div class="result-container">
+            {{ convertedFrom }} ||
             {{ convertedTime }}
+          </div>
+
+          <div class="wattage">
+            at {{ conversionTo }} watts
           </div>
         </div>
       </div>

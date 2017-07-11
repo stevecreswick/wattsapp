@@ -10,8 +10,9 @@ body {
 .control-panel {
   height: 400px;
   background: white;
-  display: flex;
-  flex-direction: row;
+  padding: 8px;
+  /*display: flex;
+  flex-direction: row;*/
 }
 
 .half-panel {
@@ -35,4 +36,78 @@ body {
 input  {
   width: 100%;
   height: 100%;
+}
+
+.input-field {
+  width: 100%;
+  margin-top: 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.input-labels {
+  width: 100%;
+  text-align: center;
+}
+
+.half-input {
+  display: inline-block;
+  width: 80px;
+}
+
+select {
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+  background: white;
+  display: inline-block;
+  text-align: center;
+}
+
+.text-between {
+  width: calc(100% - 80px);
+  margin: 40px;
+  text-align: center;
+}
+
+.result-container {
+  width: calc(100% - 60px);
+  margin: 30px 30px 0 30px;
+  font-size: 48px;
+  text-align: center;
+}
+
+/*Watt Switch*/
+.watt-switch {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.watt-button {
+  width: calc(50% - 16px);
+  margin: 0 8px;
+  padding: 0 6px;
+  background-color: grey;
+  text-align: center;
+  font-size: 16px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.wattage {
+  text-align: right;
+}
+
+.active {
+  border: 1px solid red;
+  background-color: red;
+  color: white;
 }

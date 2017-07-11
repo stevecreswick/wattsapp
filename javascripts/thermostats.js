@@ -3,9 +3,19 @@ angular.module( 'wattsApp' ).controller(
   [
     '$scope',
     function( $scope ) {
-      $scope.conversionTo = '700';
 
-      var generateTimes = function() {
+      // Initialize
+      $scope.conversionTo = '700';
+      $scope.conversionFrom = '1100';
+
+      // Utilities
+      var toggleConversion = function() {
+        $scope.conversionTo === '700' ?
+          $scope.conversionTo = '1100' :
+          $scope.conversionTo = '700';
+      };
+
+      var generateFiveMinIncrements = function() {
         var times = [];
         for (var i = 1; i < 121; i++) {
           var digit = 5 * i;
@@ -15,21 +25,44 @@ angular.module( 'wattsApp' ).controller(
         return times;
       };
 
-      var convertTime = function( seconds ) {
+      // Convert Minutes Option and Seconds Option to Total Seconds
+      var convertInput = function( minutes, seconds ) {
+        if ( !minutes && !seconds ) {
+          var minutes = parseInt( $scope.minutesSelected ),
+              seconds = parseInt( $scope.secondsSelected );
+        }
+
+        var minutesToSeconds    =   minutes * 60,
+            converted           =   minutesToSeconds + seconds,
+            index               =   baseTimes.indexOf( converted );
+
+        if ( $scope.conversionTo === '1100' && index ) {
+          $scope.convertedTime = convertSeconds( convertedToElevenHundred[ index ] );
+        }
+        else if ( $scope.conversionTo === '700' && index ) {
+          $scope.convertedTime = convertSeconds( convertedToSevenHundred[ index ] );
+        }
+
+        return minutesToSeconds + seconds;
+      };
+
+      var convertSeconds = function( seconds ) {
         if ( !seconds ) {
           return;
         }
 
-        var convertedDate;
+        var convertedTime;
 
         if ( seconds >= 600 ) {
-          convertedDate = new Date( seconds * 1000 ).toISOString().substr( 14, 5 );
+          convertedTime = new Date( seconds * 1000 ).toISOString().substr( 14, 5 );
         }
         else {
-          convertedDate = new Date( seconds * 1000 ).toISOString().substr( 15, 4 );
+          convertedTime = new Date( seconds * 1000 ).toISOString().substr( 15, 4 );
         }
 
-        return convertedDate;
+        $scope.convertedFrom = seconds;
+
+        return convertedTime;
       };
 
       var generateSecondsOptions = function() {
@@ -43,12 +76,28 @@ angular.module( 'wattsApp' ).controller(
         return secondsOptions;
       }
 
-      // User Inputs and Models
-      $scope.minutesOptions = Array.apply(null, {length: 11}).map(Number.call, Number);
-      $scope.secondsOptions = generateSecondsOptions();
 
-      $scope.minutesSelected = $scope.minutesOptions[ 0 ];
-      $scope.secondsSelected = $scope.secondsOptions[ 0 ];
+      // Interaction
+      $scope.toSevenHundred = function() {
+        if ( $scope.conversionTo !== '700' ) {
+          toggleConversion();
+        }
+      };
+
+      $scope.toElevenHundred = function() {
+        if ( $scope.conversionTo !== '1100' ) {
+          toggleConversion();
+        }
+      };
+
+      // Watchers
+      $scope.$watch( 'conversionTo', function( conversion ) {
+        conversion === '700' ?
+          $scope.conversionFrom = '1100' :
+          $scope.conversionFrom = '700';
+
+        convertInput();
+      } );
 
       $scope.$watch( 'minutesSelected', function( minutes ) {
         var minutes = parseInt( minutes ),
@@ -68,23 +117,16 @@ angular.module( 'wattsApp' ).controller(
         convertInput( minutes, seconds );
       } );
 
-      // Convert Minutes Option and Seconds Option to Total Seconds
-      var convertInput = function( minutes, seconds ) {
-        var minutesToSeconds    =   minutes * 60,
-            converted           =   minutesToSeconds + seconds,
-            index               =   baseTimes.indexOf( converted );
+      // Initialize Options
+      $scope.minutesOptions = Array.apply(null, {length: 11}).map(Number.call, Number);
+      $scope.secondsOptions = generateSecondsOptions();
 
-        console.log( 'index ', index );
-
-        if ( $scope.conversionTo === '700' && index ) {
-          $scope.convertedTime = convertTime( convertedToElevenHundred[ index ] );
-        }
-        else if ( $scope.conversionTo === '1100' && index ) {
-          $scope.convertedTime = convertTime( convertedToSevenHundred[ index ] );
-        }
-
-        return minutesToSeconds + seconds;
+      $scope.setValues = function() {
+        $scope.minutesSelected = $scope.minutesOptions[ 0 ];
+        $scope.secondsSelected = $scope.secondsOptions[ 0 ];
       };
+
+
 
       // Find the index of that seconds value in the base Array
       // Find the value at that index in the conversion Array
@@ -92,34 +134,35 @@ angular.module( 'wattsApp' ).controller(
       // If the minutes are 10, seconds must be 0;
 
       // Base Times
-      var baseTimes = generateTimes();
+      var baseTimes = generateFiveMinIncrements();
 
       // Converted times
       var convertedToElevenHundred = [
-        3, 6, 10,
-        13, 16, 19, 22, 25, 29,
-        32, 35, 38, 41, 45,
-        48, 51, 54, 57, 60, 64,
+        3, 6, 10, 13, 16,
+        19, 22, 25, 29, 32,
+        35, 38, 41, 45, 48,
+        51, 54, 57, 60, 64,
         67, 70, 73, 76, 80,
-        83, 86, 89, 92, 95, 99,
-        102, 105, 108, 111, 115,
-        118, 121, 124, 127, 130, 134,
-        137, 140, 143, 146, 150,
-        153, 156, 159, 162, 165, 169,
-        172, 175, 178, 181, 185,
-        188, 191, 194, 197, 190, 194,
-        197, 200, 203, 206, 210,
-        213, 216, 219, 222, 225, 229,
-        233, 235, 239,
-        242, 245, 248, 251, 255,
-        258, 261, 264, 267, 270, 274,
-        277, 280, 283, 286, 290, // 4:50
-        293, 296, 299, 302, 305, 309,
+        83, 86, 89, 92, 95,
+        99, 102, 105, 108, 111,
+        115, 118, 121, 124, 127,
+        130, 134, 137, 140, 143,
+        146, 150, 153, 156, 159,
+        162, 165, 169, 172, 175,
+        178, 181, 185, 188, 191,
+        194, 197, 190, 194, 197,
+        200, 203, 206, 210, 213,
+        216, 219, 222, 225, 229,
+        233, 235, 239, 242, 245,
+        248, 251, 255, 258, 261,
+        264, 267, 270, 274, 277,
+        280, 283, 286, 290, 293,
+        296, 299, 302, 305, 309,
         312, 315, 318, 321, 325,
-        328, 331, 334, 337, 340, 344,
-        347, 350, 353, 356, 360, // 6:00
-        363, 366, 369, 372, 375, 379,
-        382 // 10:00
+        328, 331, 334, 337, 340,
+        344, 347, 350, 353, 356,
+        360, 363, 366, 369, 372,
+        375, 379, 382
       ];
 
 
