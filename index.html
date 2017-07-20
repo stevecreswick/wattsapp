@@ -7,7 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="./javascripts/application.js"></script>
     <script src="./javascripts/thermostats.js"></script>
-    <link rel="stylesheet" href="./stylesheets/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./app.css">
 
      <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
   </head>
@@ -21,10 +22,14 @@
           <!-- Wattage Switch -->
           <div class="watt-switch">
             <div class="watt-button" ng-class="{ 'active' : conversionTo === '1100' }" ng-click="toElevenHundred()">
-              700 watt to 1100 watt
+              700 watt <br>
+                to <br>
+              1100 watt
             </div>
             <div class="watt-button" ng-class="{ 'active' : conversionTo === '700' }" ng-click="toSevenHundred()">
-              1100 watt to 700 watt
+              1100 watt <br>
+              to <br>
+              700 watt
             </div>
           </div>
 
@@ -60,17 +65,22 @@
           </div>
 
           <!-- Text Between -->
-          <div class="text-between">
+          <div class="text-between" ng-if="validTime">
             is
           </div>
 
           <!-- Result -->
-          <div class="result-container">
-            {{ convertedFrom }} ||
+          <div class="result-container" ng-if="validTime">
             {{ convertedTime }}
           </div>
+          <div class="instructions" ng-if="!validTime">
+            Please enter a time between<br> 00:05 and 10:00.
+          </div>
+          <!-- <div class="text-between">
+            {{ convertedFrom }} seconds
+          </div> -->
 
-          <div class="wattage">
+          <div class="wattage" ng-if="validTime">
             at {{ conversionTo }} watts
           </div>
         </div>

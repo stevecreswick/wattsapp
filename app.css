@@ -1,5 +1,13 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
 body {
-  background-color: ghostwhite;
+  background-color: #ef5350;
 }
 
 .page-container {
@@ -10,7 +18,9 @@ body {
 .control-panel {
   height: 400px;
   background: white;
-  padding: 8px;
+  padding: 2em 1em;
+  border-radius: 3%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   /*display: flex;
   flex-direction: row;*/
 }
@@ -47,6 +57,8 @@ input  {
 
 .input-labels {
   width: 100%;
+  font-size: 0.8em;
+  color: #bdbdbd;
   text-align: center;
 }
 
@@ -66,15 +78,25 @@ select {
 
 .text-between {
   width: calc(100% - 80px);
-  margin: 40px;
+  margin: 30px 30px 10px 30px;
+  font-size: 0.8em;
+  color: #bdbdbd;
   text-align: center;
 }
 
 .result-container {
   width: calc(100% - 60px);
-  margin: 30px 30px 0 30px;
+  margin: 20px 30px 0 30px;
   font-size: 48px;
   text-align: center;
+}
+
+.instructions {
+  font-size: 1.2em;
+  color: #d50000;
+  margin-top: 64px;
+  text-align: center;
+  /*text-transform: uppercase;*/
 }
 
 /*Watt Switch*/
@@ -89,11 +111,10 @@ select {
 .watt-button {
   width: calc(50% - 16px);
   margin: 0 8px;
-  padding: 0 6px;
+  padding: 6px;
   background-color: grey;
   text-align: center;
   font-size: 16px;
-  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -104,10 +125,16 @@ select {
 
 .wattage {
   text-align: right;
+  color: #ef5350;
 }
 
 .active {
-  border: 1px solid red;
-  background-color: red;
+  /*border: 2px solid #ff1744;*/
+  border: 2px solid #ef5350;
+  background-color: #f44336 ;
+  font-size: 1.1em;
+  /*background-color: #ef5350;*/
+
+  font-weight: bold;
   color: white;
 }

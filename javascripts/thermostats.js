@@ -7,6 +7,7 @@ angular.module( 'wattsApp' ).controller(
       // Initialize
       $scope.conversionTo = '700';
       $scope.conversionFrom = '1100';
+      // $scope.timeInput = {};
 
       // Utilities
       var toggleConversion = function() {
@@ -36,12 +37,24 @@ angular.module( 'wattsApp' ).controller(
             converted           =   minutesToSeconds + seconds,
             index               =   baseTimes.indexOf( converted );
 
-        if ( $scope.conversionTo === '1100' && index ) {
+        $scope.convertedTime = null;
+
+
+        if ( $scope.conversionTo === '1100' && index > -1 ) {
           $scope.convertedTime = convertSeconds( convertedToElevenHundred[ index ] );
         }
-        else if ( $scope.conversionTo === '700' && index ) {
+        else if ( $scope.conversionTo === '700' && index > -1 ) {
+
           $scope.convertedTime = convertSeconds( convertedToSevenHundred[ index ] );
         }
+
+        if ( !$scope.convertedTime ) {
+          $scope.validTime = false;
+        }
+        else {
+          $scope.validTime = true;
+        }
+
 
         return minutesToSeconds + seconds;
       };
@@ -75,7 +88,6 @@ angular.module( 'wattsApp' ).controller(
 
         return secondsOptions;
       }
-
 
       // Interaction
       $scope.toSevenHundred = function() {
@@ -125,8 +137,6 @@ angular.module( 'wattsApp' ).controller(
         $scope.minutesSelected = $scope.minutesOptions[ 0 ];
         $scope.secondsSelected = $scope.secondsOptions[ 0 ];
       };
-
-
 
       // Find the index of that seconds value in the base Array
       // Find the value at that index in the conversion Array
