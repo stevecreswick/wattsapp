@@ -1,28 +1,55 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #ef5350;
+  overflow-x: hidden;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-  font-size: 1.8em;
+.title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
-body {
-  background-color: #ef5350;
+h1 {
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+}
+
+.sub-title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+h4 {
+  font-family: 'Lato', sans-serif;
 }
 
 .page-container {
-  width: 400px;
   margin: 0 auto;
 }
 
 .control-panel {
-  height: 400px;
+  width: calc(100% - 16px);
+  height: 100%;
+  max-height: 600px;
+  max-width: 600px;
+  box-sizing: border-box;
   background: white;
-  padding: 2em 1em;
+  padding: 0.2em 1em 2em 1em;
   border-radius: 3%;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  /*display: flex;
-  flex-direction: row;*/
+  margin: 0 auto;
 }
 
 .half-panel {
@@ -40,7 +67,6 @@ body {
   width: calc(50% - 16px);
   height: 5em;
   display: inline-block;
-  background-color: blue;
 }
 
 input  {
@@ -49,14 +75,18 @@ input  {
 }
 
 .input-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  margin-top: 30px;
   box-sizing: border-box;
   text-align: center;
 }
 
 .input-labels {
   width: 100%;
+  margin-top: 6px;
   font-size: 0.8em;
   color: #bdbdbd;
   text-align: center;
@@ -64,23 +94,31 @@ input  {
 
 .half-input {
   display: inline-block;
-  width: 80px;
+  width: calc(40% - 32px);
+  margin: 0 16px;
 }
 
 select {
-  width: 80px;
+  width: 100%;
   height: 80px;
   font-size: 24px;
   background: white;
   display: inline-block;
+  text-align: center;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #e65100;
+}
+
+option {
   text-align: center;
 }
 
 .text-between {
   width: calc(100% - 80px);
   margin: 30px 30px 10px 30px;
-  font-size: 0.8em;
-  color: #bdbdbd;
+  font-size: 1em;
+  color: #e65100;
   text-align: center;
 }
 
@@ -89,6 +127,7 @@ select {
   margin: 20px 30px 0 30px;
   font-size: 48px;
   text-align: center;
+  border-bottom: 1px solid #ef5350;
 }
 
 .instructions {
@@ -124,6 +163,7 @@ select {
 }
 
 .wattage {
+  margin-top: 8px;
   text-align: right;
   color: #ef5350;
 }
