@@ -105,20 +105,12 @@ select {
   background: white;
   display: inline-block;
   text-align: center;
-  border-radius: 0;
+  border-radius: 0%;
   border: none;
   border-bottom: 2px solid #ef5350;
 }
 
 option {
-  text-align: center;
-}
-
-.text-between {
-  width: calc(100% - 80px);
-  margin: 30px 30px 10px 30px;
-  font-size: 1em;
-  color: #e65100;
   text-align: center;
 }
 
@@ -135,7 +127,6 @@ option {
   color: #d50000;
   margin-top: 64px;
   text-align: center;
-  /*text-transform: uppercase;*/
 }
 
 /*Watt Switch*/
@@ -169,12 +160,9 @@ option {
 }
 
 .active {
-  /*border: 2px solid #ff1744;*/
   border: 2px solid #ef5350;
   background-color: #f44336 ;
   font-size: 1.1em;
-  /*background-color: #ef5350;*/
-
   font-weight: bold;
   color: white;
 }

@@ -54,8 +54,10 @@
               </select>
             </div>
             <div class="half-input">
-              <select ng-model="secondsSelected" ng-init="setValues()">
-                <option ng-repeat="seconds in secondsOptions" value="{{ seconds }}">
+              <select ng-model="secondsSelected"
+                      ng-init="setValues()">
+                <option ng-repeat="seconds in secondsOptions"
+                        value="{{ seconds }}">
                   {{ seconds }}
                 </option>
               </select>
@@ -64,7 +66,7 @@
 
           <div class="input-labels">
             <div class="half-input minutes-label">
-              min
+              minutes
             </div>
             <div class="half-input seconds-label">
               seconds
@@ -79,11 +81,6 @@
             <h4>Result</h4>
           </div>
 
-          <!-- Text Between -->
-          <!-- <div class="text-between" ng-if="validTime">
-            is
-          </div> -->
-
           <!-- Result -->
           <div class="result-container" ng-if="validTime">
             {{ convertedTime }}
@@ -91,9 +88,6 @@
           <div class="instructions" ng-if="!validTime">
             Please enter a time between<br> 00:05 and 10:00.
           </div>
-          <!-- <div class="text-between">
-            {{ convertedFrom }} seconds
-          </div> -->
 
           <div class="wattage" ng-if="validTime">
             at {{ conversionTo }} watts
