@@ -1,10 +1,96 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Google Analytics  -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113879793-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113879793-1');
+    </script>
+
+    <!-- AdSense Script -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3408857061501900",
+        enable_page_level_ads: true
+      });
+    </script>
+
+    <!-- Favicon -->
+    <link rel=icon type="image/png" href=./images/kitchen-microwave.png>
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Convert microwaves times between 700 watts and 1100 watts">
+    <meta name="keywords" content="microwave,microwave conversion,1100 watt microwave,700 watt microwave,convert microwaves times">
+
     <meta charset="utf-8">
-    <title></title>
+
+
+
+    <title>Watts App - Convert Microwave Times</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="./javascripts/application.js"></script>
+    <script src="./javascripts/thermostats.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="../app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
   </head>
-  <body>
-    About
+  <body ng-app="wattsApp">
+    <div class="page-container">
+      <div class="title">
+        <h1>About Us</h1>
+      </div>
+      <div class="sub-title">
+        <a href="http://www.microwaveconverter.com">
+          <h4>Watts App</h4>
+        </a>
+      </div>
+
+      <div class="control-panel panel">
+        <h4>About <a class="inline-link" href="http://www.microwaveconverter.com">Watts App</a></h4>
+        <h3>Converting Microwave Times Between 700 watts and 1100 watts</h3>
+        <p>
+          This website was created to provide a tool to convert microwave times between 700 watt and 1100 watt microwave ovens.
+          I often found microwave packaging only had times for 1100 watt microwaves, but my apartments would only have a 700 watt microwave.
+          The current solutions to this problem did not have an intuitive interface to figure out this information quickly.
+        </p>
+
+        <h3>Microwave Cooking Times</h3>
+        <p>
+          In addition this site provides microwaving instructions for cooking simple household ingredients.
+        </p>
+
+        <h3>Questions or Suggestions</h3>
+        <p>
+          If you have any questions or suggestions, please reach out to us.
+          <a class="inline-link" href="mailto:microwavecookingsite@gmail.com">microwavecookingsite@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="footer">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="./privacy-policy.html">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="./contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
