@@ -16,18 +16,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.title {
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-}
-
 h1 {
   font-size: 2em;
-  font-family: 'Lato', sans-serif;
-}
-
-.sub-title {
-  text-align: center;
   font-family: 'Lato', sans-serif;
 }
 
@@ -35,9 +25,53 @@ h4 {
   font-family: 'Lato', sans-serif;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+li {
+  margin: 0 16px;
+}
+
+a {
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  border-bottom: 2px solid black;
+}
+
+a.inline-link {
+  color: #ef5350;
+}
+
 .page-container {
   margin: 0 auto;
   padding-bottom: 20px;
+}
+
+.footer {
+  margin-top: 40px;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.sub-title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
 .control-panel {
@@ -51,6 +85,11 @@ h4 {
   border-radius: 3%;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   margin: 0 auto;
+}
+
+.panel {
+  overflow: scroll;
+  padding: 16px 32px;
 }
 
 .half-panel {
