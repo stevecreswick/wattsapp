@@ -21,45 +21,78 @@
       });
     </script>
 
+    <!-- Title -->
+    <title>Watts App - Convert Microwave Times</title>
+
     <!-- Favicon -->
     <link rel=icon type="image/png" href=./images/kitchen-microwave.png>
 
     <!-- Meta Tags -->
     <meta name="description" content="Convert microwaves times between 700 watts and 1100 watts">
     <meta name="keywords" content="microwave,microwave conversion,1100 watt microwave,700 watt microwave,convert microwaves times">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
-
-
-    <title>Watts App - Convert Microwave Times</title>
-
+    <!-- Angular -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+
+    <!-- Scripts -->
     <script src="./javascripts/application.js"></script>
     <script src="./javascripts/thermostats.js"></script>
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:400,700" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="./app.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+
   </head>
   <body ng-app="wattsApp">
     <div class="page-container">
-      <div class="title">
-        <h1>Watts App</h1>
+      <div class="navigation">
+        <div class="logo">
+          <img src="./images/microwave3.png" alt="">
+          <h1>Watts App</h1>
+        </div>
+        <div class="">
+
+        </div>
+        <ul class="navigation-links">
+          <li>
+            <a href="/">
+              <div class="navigation-link">
+                <img class="link-icon" src="./images/stopwatch.png" alt="">
+                <span>Convert Microwave Times</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./vegetables.html">
+              <div class="navigation-link">
+                <img class="link-icon" src="./images/recipetwo.png" alt="">
+                <span>Microwave Cooking Recipes</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="title">
+
       </div>
       <div class="sub-title">
         <h4>convert microwave times</h4>
-      </div>
+      </div> -->
 
-      <div class="sub-title">
+      <!-- <div class="sub-title">
         <h4>Check Out These Other Valuable Microwave Cooking Resources:</h4>
         <h4>
           <a href="./vegetables.html">
             Microwave Cooking Guide: Cooking Vegetables in The Microwave
           </a>
         </h4>
-      </div>
+      </div> -->
 
       <div ng-controller="ThermostatController">
         <div class="control-panel">
