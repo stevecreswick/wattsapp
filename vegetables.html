@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google Analytics  -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113879793-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113879793-1');
+    </script>
+
+    <!-- AdSense Script -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3408857061501900",
+        enable_page_level_ads: true
+      });
+    </script>
+
+    <!-- Favicon -->
+    <link rel=icon type="image/png" href=./images/kitchen-microwave.png>
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Convert microwaves times between 700 watts and 1100 watts">
+    <meta name="keywords" content="microwave,microwave conversion,1100 watt microwave,700 watt microwave,convert microwaves times">
+
+    <meta charset="utf-8">
+
+
+
+    <title>Watts App - Convert Microwave Times</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="../javascripts/application.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="./app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+  </head>
+  <body ng-app="wattsApp">
+    <div class="page-container">
+      <div class="title">
+        <a href="/">
+        <a href="/">
+          <h1>Watts App</h1>
+        </a>
+      </div>
+
+      <div class="sub-title">
+        <h4>microwave cooking times for vegetables</h4>
+      </div>
+
+      <div class="control-panel panel">
+        <h3>Vegetables</h3>
+
+        <ol class="vegetable-list">
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/artichoke.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Artichoke
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/asparagus.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Asparagus
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/green_bean.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Green Beans
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="icon">
+                  <img src="./images/vegetables/beet.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Beets
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/broccoli.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Broccoli
+                </div>
+              </div>
+            </a>
+          </li>
+
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/brussel_sprouts.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Brussel Sprouts
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/carrot.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Carrots
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/cauliflower.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Cauliflower
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/corn.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Corn
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/eggplant.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Eggplant
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/fennel.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Fennel
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/greens.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Greens
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/leek.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Leeks
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/mushroom.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Mushrooms
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/broccoli.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Okra
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/onion.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Onions
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/parsnip.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Parsnips
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/peas.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Peas
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/pepper.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Bell Peppers
+                </div>
+              </div>
+            </a>
+          </li>
+
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/potato.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Potatoes
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/summer_squash.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Summer Squash
+                </div>
+              </div>
+            </a>
+          </li>
+
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/squash.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Winter Squash
+                </div>
+              </div>
+            </a>
+          </li>
+
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/spaghetti_squash.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Spaghetti Squash
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="vegetable">
+            <a href="#">
+              <div class="icon-and-label">
+                <div class="vegetable-icon">
+                  <img src="./images/vegetables/turnip.png" alt="">
+                </div>
+                <div class="icon-label">
+                  Turnips
+                </div>
+              </div>
+            </a>
+          </li>
+
+        </ol>
+
+      </div>
+
+      <div class="footer">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="./pages/about.html">About</a>
+          </li>
+          <li>
+            <a href="./pages/privacy-policy.html">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="./pages/contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

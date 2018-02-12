@@ -14,6 +14,7 @@ body {
 
 * {
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -31,6 +32,10 @@ ul {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+}
+
+ol {
+  padding: 0;
 }
 
 li {
@@ -82,7 +87,7 @@ a.inline-link {
   box-sizing: border-box;
   background: white;
   padding: 0.2em 1em 2em 1em;
-  border-radius: 3%;
+  border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   margin: 0 auto;
 }
@@ -206,3 +211,48 @@ option {
   font-weight: bold;
   color: white;
 }
+
+/* Vegetables */
+.vegetable-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.vegetable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 128px;
+  margin-bottom: 16px;
+
+  /* width: 96px; */
+  /* height: 96px; */
+}
+
+.vegetable-icon {
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.vegetable-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.icon-label {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.7em;
+  color: #A9A9A9;
+}
+
+/* 8px */
